@@ -14,6 +14,7 @@ import java.time.LocalDateTime
 
 @RestController
 class ProductController(private val productRepository: ProductRepository) {
+//class ProductController(private val productRepository: ProductRepository) { ->older version
 
     @GetMapping("/products")
     fun getProducts(): List<Product> {
