@@ -12,28 +12,30 @@ class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     var id: Long? = null
 
-    @Column(unique = true, nullable = false)
+    @Column(name="sku", unique = true, nullable = false)
     var sku: String = ""
 
-    @Column(nullable = false)
+    @Column(name="name", nullable = false)
     var name: String = ""
 
+    @Column(name="description", nullable = false)
     var description: String = ""
 
-    @Column(nullable = false)
+    @Column(name="price", nullable = false)
     var price: BigDecimal = BigDecimal.ZERO
 
-    @Column(nullable = false)
+    @Column(name="stock", nullable = false)
     var stock: Int = 0
 
-    @Column(name = "is_active")
+    @Column(name="isActive", nullable = false)
     var isActive: Boolean = true
 
     @Column(name = "created_at")
     var createdAt: LocalDateTime = LocalDateTime.now()
 
     @Column(name = "updated_at")
-    var updatedAt: String = "" // temporário como tinhas
+    var updatedAt: LocalDateTime? = null
 }
